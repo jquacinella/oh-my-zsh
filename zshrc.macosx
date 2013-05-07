@@ -1,0 +1,74 @@
+# Path to your oh-my-zsh configuration.
+export ZSH=$HOME/.oh-my-zsh
+
+# Set to the name theme to load.
+# Look in ~/.oh-my-zsh/themes/
+export ZSH_THEME="candy"
+
+# Set to this to use case-sensitive completion
+# export CASE_SENSITIVE="true"
+
+# Comment this out to disable weekly auto-update checks
+# export DISABLE_AUTO_UPDATE="true"
+
+# Uncomment following line if you want to disable colors in ls
+# export DISABLE_LS_COLORS="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git svn)
+
+source $ZSH/oh-my-zsh.sh
+
+### Customize to your needs...
+
+# Shared History
+setopt inc_append_history
+setopt share_history
+
+# Complete in word
+autoload -U compinit && compinit
+setopt complete_in_word
+
+# Load mapfile
+zmodload zsh/mapfile
+
+# Path
+export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+
+# EC2 Tools
+export EC2_HOME=~/Software/amazon
+export EMR_HOME=~/Software/amazon/elastic-mapreduce
+export AWS_IAM_HOME=~/Software/amazon/IAMCli-1.2.0
+export AWS_IAM_PATH=$AWS_IAM_HOME/bin
+export AWS_IAM_CRED_PATH=$AWS_IAM_HOME/creds
+export EC2_PRIVATE_KEY=$AWS_IAM_CRED_PATH/privateKey.pem
+export EC2_CERT=$AWS_IAM_CRED_PATH/cert.pem
+export AWS_CREDENTIAL_FILE=$EC2_HOME/awscred.txt
+export AWS_CLOUDFORMATION_HOME=~/Software/amazon/AWSCloudFormation-1.0.6
+export AWS_CLOUDFORMATION_PATH=$AWS_CLOUDFORMATIOB_HOME/bin
+export AWS_ELB_HOME=$EC2_HOME/elb
+export AWS_ELB_PATH=$AWS_ELB_HOME/bin
+export PATH=$PATH:$EC2_HOME/bin:$EMR_HOME:$AWS_IAM_PATH:$AWS_CLOUDFORM_PATH:$AWS_ELB_PATH
+alias aws='client=$1 source ~/aws.sh $client'
+
+# Java
+export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
+export PATH=$PATH:~/Software/jakarta-jmeter-2.4/bin
+
+# Python startup script
+export PYTHONSTARTUP=~/.pythonrc.py
+
+# NodeJS
+export NODEJS=/usr/local/nodejs
+export PATH=$PATH:$NODEJS/bin
+
+# Scala
+export SCALA=~/Software/scala-2.9.1.final
+export PATH=$PATH:$SCALA/bin
+
+# Git flow completion
+source ~/.oh-my-zsh/plugins/git-flow/git-flow-completion.zsh
+
+### Anything thats not a part of the repo config
+source ~/.oh-my-zsh/private.sh
