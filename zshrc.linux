@@ -29,11 +29,14 @@ ZSH_THEME="candy"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github git-flow)
+plugins=(git github git-flow ssh-agent docker)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+
+# Custom ZSH options
+setopt interactivecomments
 
 # AWS Setup
 export EC2_PRIVATE_KEY="~/.ec2/key"
@@ -41,3 +44,48 @@ export EC2_CERT="~/.ec2/cert"
 
 # Dim the Screen
 /usr/bin/redshift -O 4700
+
+# Node path to global modules
+export NODE_PATH="/usr/lib/node_modules"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# Java
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+
+# Andriod Development Tools
+ADT_FOLDER="/home/james/Software/adt-bundle-linux-x86_64-20140321"
+PATH=$PATH:$ADT_FOLDER/sdk/platform-tools:$ADT_FOLDER/sdk/tools
+
+# Some aliases
+alias ll="ls -alFG"
+
+# Setup some useful keys
+ssh-add ~/.ssh/id_rsa
+ssh-add ~/.ssh/credacious_rsa
+ssh-add ~/.ssh/james-personal.pem
+ssh-add ~/.ssh/mrquintopolous_bitbucket
+ssh-add ~/.ssh/james.credacious
+
+
+# Docker setup
+export DOCKER_HOST=tcp://127.0.0.1:2375
+
+
+#HADOOP VARIABLES START
+export HADOOP_HOME="/home/yarn/hadoop"
+export HADOOP_PREFIX=$HADOOP_HOME
+export HADOOP_INSTALL=$HADOOP_HOME
+export HADOOP_MAPRED_HOME=$HADOOP_HOME
+export HADOOP_COMMON_HOME=$HADOOP_HOME
+export HADOOP_HDFS_HOME=$HADOOP_HOME
+export YARN_HOME=$HADOOP_HOME
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
+#export HADOOP_OPTS="-Djava.library.path=$HADOOP_INSTALL/lib"
+export HADOOP_CMD=$HADOOP_INSTALL/bin/hadoop
+export HADOOP_STREAMING=$HADOOP_INSTALL/share/hadoop/tools/lib/hadoop-streaming-2.7.1.jar
+#HADOOP VARIABLES END
+
+export SPARK_HOME="/home/james/Software/spark-1.5.1-bin-hadoop2.6"
+export PATH=$SPARK_HOME/bin:$PATH
