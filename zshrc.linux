@@ -29,7 +29,7 @@ ZSH_THEME="candy"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github git-flow ssh-agent docker)
+plugins=(z git github git-flow ssh-agent docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -58,7 +58,7 @@ ADT_FOLDER="/home/james/Software/adt-bundle-linux-x86_64-20140321"
 PATH=$PATH:$ADT_FOLDER/sdk/platform-tools:$ADT_FOLDER/sdk/tools
 
 # Some aliases
-alias ll="ls -alFG"
+alias ll="ls -halFG"
 
 # Setup some useful keys
 ssh-add ~/.ssh/id_rsa
