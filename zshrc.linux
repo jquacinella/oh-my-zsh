@@ -89,3 +89,8 @@ export HADOOP_STREAMING=$HADOOP_INSTALL/share/hadoop/tools/lib/hadoop-streaming-
 
 export SPARK_HOME="/home/james/Software/spark-1.5.1-bin-hadoop2.6"
 export PATH=$SPARK_HOME/bin:$PATH
+
+# Ruby Setup
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
