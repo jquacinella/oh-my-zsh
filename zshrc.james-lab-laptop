@@ -94,3 +94,6 @@ export PATH=$SPARK_HOME/bin:$PATH
 
 # Python Path for xgboost
 export PYTHONPATH=~/Software/xgboost/python-package
+
+# Python path for virtualenv burrito
+source ~/.zprofile
