@@ -29,7 +29,7 @@ ZSH_THEME="candy"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(z git github git-flow ssh-agent docker)
+plugins=(z git github git-flow ssh-agent docker kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -43,7 +43,7 @@ export EC2_PRIVATE_KEY="~/.ec2/key"
 export EC2_CERT="~/.ec2/cert"
 
 # Dim the Screen
-/usr/bin/redshift -O 2500
+/usr/bin/redshift -b 1.0 -O 2500
 
 # Node path to global modules
 export NODE_PATH="/usr/lib/node_modules"
@@ -70,7 +70,7 @@ ssh-add ~/.ssh/james.credacious
 
 
 # Docker setup
-export DOCKER_HOST=tcp://127.0.0.1:2375
+#export DOCKER_HOST=tcp://127.0.0.1:2375
 
 
 #HADOOP VARIABLES START
@@ -97,3 +97,10 @@ export PYTHONPATH=~/Software/xgboost/python-package
 
 # Python path for virtualenv burrito
 source ~/.zprofile
+
+# Autoenv
+#eval "$(direnv hook zsh)"
+
+alias gitl='git log --all --decorate --oneline --graph'
+#export PATH=/media/james/DATA/miniconda3/bin:/home/james/Software/spark-1.5.1-bin-hadoop2.6/bin:/home/james/bin:/home/james/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/james/.rvm/bin:/home/james/Software/adt-bundle-linux-x86_64-20140321/sdk/platform-tools:/home/james/Software/adt-bundle-linux-x86_64-20140321/sdk/tools:/home/yarn/hadoop/sbin:/home/yarn/hadoop/bin
+export PATH=/home/james/.venvburrito/bin:/home/james/Software/spark-1.5.1-bin-hadoop2.6/bin:/home/james/bin:/home/james/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/james/.rvm/bin:/home/james/Software/adt-bundle-linux-x86_64-20140321/sdk/platform-tools:/home/james/Software/adt-bundle-linux-x86_64-20140321/sdk/tools:/home/yarn/hadoop/sbin:/home/yarn/hadoop/bin
