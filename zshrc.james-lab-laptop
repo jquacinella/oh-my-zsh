@@ -61,12 +61,13 @@ PATH=$PATH:$ADT_FOLDER/sdk/platform-tools:$ADT_FOLDER/sdk/tools
 alias ll="ls -halFG"
 
 # Setup some useful keys
-ssh-add ~/.ssh/id_rsa
-ssh-add ~/.ssh/credacious_rsa
+#ssh-add ~/.ssh/id_rsa
+#ssh-add ~/.ssh/credacious_rsa
 #ssh-add ~/.ssh/james-personal.pem
-ssh-add ~/.ssh/gitlab
+#ssh-add ~/.ssh/gitlab
+ssh-add ~/.ssh/taotech_ed25519
 ssh-add ~/.ssh/mrquintopolous_bitbucket
-ssh-add ~/.ssh/james.credacious
+#ssh-add ~/.ssh/james.credacious
 
 
 # Docker setup
