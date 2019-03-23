@@ -1,0 +1,6 @@
+# startup virtualenv-burrito
+echo $HOME/.venvburrito/startup.sh
+if [ -f $HOME/.venvburrito/startup.sh ]; then
+    echo "VirtualENV Burrito Activated"
+    . $HOME/.venvburrito/startup.sh
+fi
