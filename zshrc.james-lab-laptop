@@ -105,3 +105,7 @@ source ~/.zprofile
 alias gitl='git log --all --decorate --oneline --graph'
 #export PATH=/media/james/DATA/miniconda3/bin:/home/james/Software/spark-1.5.1-bin-hadoop2.6/bin:/home/james/bin:/home/james/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/james/.rvm/bin:/home/james/Software/adt-bundle-linux-x86_64-20140321/sdk/platform-tools:/home/james/Software/adt-bundle-linux-x86_64-20140321/sdk/tools:/home/yarn/hadoop/sbin:/home/yarn/hadoop/bin
 export PATH=/home/james/.venvburrito/bin:/home/james/Software/spark-1.5.1-bin-hadoop2.6/bin:/home/james/bin:/home/james/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/james/.rvm/bin:/home/james/Software/adt-bundle-linux-x86_64-20140321/sdk/platform-tools:/home/james/Software/adt-bundle-linux-x86_64-20140321/sdk/tools:/home/yarn/hadoop/sbin:/home/yarn/hadoop/bin
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
