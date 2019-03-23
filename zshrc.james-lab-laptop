@@ -29,7 +29,8 @@ ZSH_THEME="candy"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(z git github git-flow ssh-agent docker kubectl)
+plugins=(z git git-extras github git-flow ssh-agent docker aws command-not-found 
+         django screen jsontools sublime sudo supervisor vagrant vscode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -95,9 +96,6 @@ export PATH=$SPARK_HOME/bin:$PATH
 
 # Python Path for xgboost
 export PYTHONPATH=~/Software/xgboost/python-package
-
-# Python path for virtualenv burrito
-source ~/.zprofile
 
 # Autoenv
 #eval "$(direnv hook zsh)"
