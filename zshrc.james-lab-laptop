@@ -44,7 +44,7 @@ export EC2_PRIVATE_KEY="~/.ec2/key"
 export EC2_CERT="~/.ec2/cert"
 
 # Dim the Screen
-/usr/bin/redshift -P -b 1.0 -O 2500
+/usr/bin/redshift -P -b 1.0 -O 4000
 
 # Node path to global modules
 export NODE_PATH="/usr/lib/node_modules"
