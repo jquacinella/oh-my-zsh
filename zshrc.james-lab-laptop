@@ -107,3 +107,8 @@ export PATH=/home/james/.venvburrito/bin:/home/james/Software/spark-1.5.1-bin-ha
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+eval "$(starship init zsh)"
+
+alias la="exa --long --header --git"
+alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock  lazyteam/lazydocker'
