@@ -44,7 +44,7 @@ export EC2_PRIVATE_KEY="~/.ec2/key"
 export EC2_CERT="~/.ec2/cert"
 
 # Dim the Screen
-/usr/bin/redshift -P -b 1.0 -O 4000
+/usr/bin/redshift -P -b 1.0 -O 3000
 
 # Node path to global modules
 export NODE_PATH="/usr/lib/node_modules"
@@ -55,11 +55,9 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 # Andriod Development Tools
-ADT_FOLDER="/home/james/Software/adt-bundle-linux-x86_64-20140321"
-PATH=$PATH:$ADT_FOLDER/sdk/platform-tools:$ADT_FOLDER/sdk/tools
+#ADT_FOLDER="/home/james/Software/adt-bundle-linux-x86_64-20140321"
+#PATH=$PATH:$ADT_FOLDER/sdk/platform-tools:$ADT_FOLDER/sdk/tools
 
-# Some aliases
-alias ll="ls -halFG"
 
 # Setup some useful keys
 #ssh-add ~/.ssh/id_rsa
@@ -76,39 +74,49 @@ ssh-add ~/.ssh/mrquintopolous_bitbucket
 
 
 #HADOOP VARIABLES START
-export HADOOP_HOME="/home/yarn/hadoop"
-export HADOOP_PREFIX=$HADOOP_HOME
-export HADOOP_INSTALL=$HADOOP_HOME
-export HADOOP_MAPRED_HOME=$HADOOP_HOME
-export HADOOP_COMMON_HOME=$HADOOP_HOME
-export HADOOP_HDFS_HOME=$HADOOP_HOME
-export YARN_HOME=$HADOOP_HOME
-export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
-export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
+#export HADOOP_HOME="/home/yarn/hadoop"
+#export HADOOP_PREFIX=$HADOOP_HOME
+#export HADOOP_INSTALL=$HADOOP_HOME
+#export HADOOP_MAPRED_HOME=$HADOOP_HOME
+#export HADOOP_COMMON_HOME=$HADOOP_HOME
+#export HADOOP_HDFS_HOME=$HADOOP_HOME
+#export YARN_HOME=$HADOOP_HOME
+#export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+#export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
 #export HADOOP_OPTS="-Djava.library.path=$HADOOP_INSTALL/lib"
-export HADOOP_CMD=$HADOOP_INSTALL/bin/hadoop
-export HADOOP_STREAMING=$HADOOP_INSTALL/share/hadoop/tools/lib/hadoop-streaming-2.7.1.jar
+#export HADOOP_CMD=$HADOOP_INSTALL/bin/hadoop
+#export HADOOP_STREAMING=$HADOOP_INSTALL/share/hadoop/tools/lib/hadoop-streaming-2.7.1.jar
 #HADOOP VARIABLES END
 
-export SPARK_HOME="/home/james/Software/spark-1.5.1-bin-hadoop2.6"
-export PATH=$SPARK_HOME/bin:$PATH
+#export SPARK_HOME="/home/james/Software/spark-1.5.1-bin-hadoop2.6"
+#export PATH=$SPARK_HOME/bin:$PATH
 
 
 # Python Path for xgboost
-export PYTHONPATH=~/Software/xgboost/python-package
+#export PYTHONPATH=~/Software/xgboost/python-package
 
 # Autoenv
 #eval "$(direnv hook zsh)"
 
-alias gitl='git log --all --decorate --oneline --graph'
 #export PATH=/media/james/DATA/miniconda3/bin:/home/james/Software/spark-1.5.1-bin-hadoop2.6/bin:/home/james/bin:/home/james/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/james/.rvm/bin:/home/james/Software/adt-bundle-linux-x86_64-20140321/sdk/platform-tools:/home/james/Software/adt-bundle-linux-x86_64-20140321/sdk/tools:/home/yarn/hadoop/sbin:/home/yarn/hadoop/bin
-export PATH=/home/james/.venvburrito/bin:/home/james/Software/spark-1.5.1-bin-hadoop2.6/bin:/home/james/bin:/home/james/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/james/.rvm/bin:/home/james/Software/adt-bundle-linux-x86_64-20140321/sdk/platform-tools:/home/james/Software/adt-bundle-linux-x86_64-20140321/sdk/tools:/home/yarn/hadoop/sbin:/home/yarn/hadoop/bin
+#export PATH=/home/james/.venvburrito/bin:/home/james/Software/spark-1.5.1-bin-hadoop2.6/bin:/home/james/bin:/home/james/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/james/.rvm/bin:/home/james/Software/adt-bundle-linux-x86_64-20140321/sdk/platform-tools:/home/james/Software/adt-bundle-linux-x86_64-20140321/sdk/tools:/home/yarn/hadoop/sbin:/home/yarn/hadoop/bin
+export PATH=/home/james/bin:/home/james/.local/bin:/home/james/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/james/.rvm/bin
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Starship Prompt
 eval "$(starship init zsh)"
 
+# kubectl
+export KUBECONFIG=~/.kube/config:~/.kube/jupyterhub-k8s-nyc3
+
+# Some aliases
+alias ll="ls -halFG"
 alias la="exa --long --header --git"
 alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock  lazyteam/lazydocker'
+alias gitl='git log --all --decorate --oneline --graph'
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
