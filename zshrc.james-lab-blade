@@ -73,3 +73,5 @@ alias gitl='git log --all --decorate --oneline --graph'
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+/usr/bin/redshift -P -b 1.0 -O 3000
