@@ -1,3 +1,8 @@
+# Handle $0 according to the standard:
+# https://zdharma-continuum.github.io/Zsh-100-Commits-Club/Zsh-Plugin-Standard.html
+0="${${ZERO:-${0:#$ZSH_ARGZERO}}:-${(%):-%N}}"
+0="${${(M)0:#/*}:-$PWD/$0}"
+
 # Open the current directory in a Finder window
 alias ofd='open_command $PWD'
 
@@ -219,8 +224,9 @@ function quick-look() {
 }
 
 function man-preview() {
+  local location
   # Don't let Preview.app steal focus if the man page doesn't exist
-  man -w "$@" &>/dev/null && man -t "$@" | open -f -a Preview || man "$@"
+  location=$(man -w "$@") && mandoc -Tpdf $location | open -f -a Preview
 }
 compdef _man man-preview
 
