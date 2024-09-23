@@ -5,7 +5,13 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="candy"
+#ZSH_THEME="candy"
+ZSH_THEME="spaceship"
+export SPACESHIP_TIME_SHOW=true
+export SPACESHIP_KUBECTL_SHOW=true
+export SPACESHIP_TIME_FORMAT="%D @ %T"
+export SPACESHIP_HOST_SHOW="always"
+
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -64,8 +70,8 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 #ssh-add ~/.ssh/credacious_rsa
 #ssh-add ~/.ssh/james-personal.pem
 #ssh-add ~/.ssh/gitlab
-ssh-add ~/.ssh/taotech_ed25519
-ssh-add ~/.ssh/mrquintopolous_bitbucket
+#ssh-add ~/.ssh/taotech_ed25519
+#ssh-add ~/.ssh/mrquintopolous_bitbucket
 #ssh-add ~/.ssh/james.credacious
 
 
@@ -100,14 +106,23 @@ ssh-add ~/.ssh/mrquintopolous_bitbucket
 
 #export PATH=/media/james/DATA/miniconda3/bin:/home/james/Software/spark-1.5.1-bin-hadoop2.6/bin:/home/james/bin:/home/james/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/james/.rvm/bin:/home/james/Software/adt-bundle-linux-x86_64-20140321/sdk/platform-tools:/home/james/Software/adt-bundle-linux-x86_64-20140321/sdk/tools:/home/yarn/hadoop/sbin:/home/yarn/hadoop/bin
 #export PATH=/home/james/.venvburrito/bin:/home/james/Software/spark-1.5.1-bin-hadoop2.6/bin:/home/james/bin:/home/james/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/james/.rvm/bin:/home/james/Software/adt-bundle-linux-x86_64-20140321/sdk/platform-tools:/home/james/Software/adt-bundle-linux-x86_64-20140321/sdk/tools:/home/yarn/hadoop/sbin:/home/yarn/hadoop/bin
-export PATH=/home/james/bin:/home/james/.local/bin:/home/james/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/james/.rvm/bin
+export PATH=/home/james/bin:/home/james/.local/bin:/home/james/.pyenv/bin:$HOME/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/james/.rvm/bin
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Starship Prompt
-eval "$(starship init zsh)"
+# Go setup
+#oexport PATH=$PATH:/usr/local/go/bin
+## Golang environment variables
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+
+# Update PATH to include GOPATH and GOROOT binaries
+export PATH=$GOPATH/bin:$GOROOT/bin:$HOME/.local/bin:$PATH
+
+## Starship Prompt
+#eval "$(starship init zsh)"
 
 # kubectl
 export KUBECONFIG=~/.kube/config:~/.kube/jupyterhub-k8s-nyc3
@@ -115,8 +130,13 @@ export KUBECONFIG=~/.kube/config:~/.kube/jupyterhub-k8s-nyc3
 # Some aliases
 alias ll="ls -halFG"
 alias la="exa --long --header --git"
-alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock  lazyteam/lazydocker'
 alias gitl='git log --all --decorate --oneline --graph'
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
+
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /home/james/go/bin/terramate terramate
