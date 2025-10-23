@@ -36,7 +36,7 @@ export SPACESHIP_HOST_SHOW="always"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(z git git-extras github git-flow ssh-agent docker aws command-not-found 
-         django screen jsontools sublime sudo supervisor vagrant vscode kubectl)
+         screen tmux jsontools sublime sudo supervisor vagrant vscode kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
