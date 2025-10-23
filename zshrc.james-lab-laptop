@@ -140,3 +140,7 @@ eval "$(pyenv virtualenv-init -)"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /home/james/go/bin/terramate terramate
+
+# add Pulumi to the PATH
+export PATH=$PATH:/home/james/.pulumi/bin
+. "/home/james/.deno/env"
